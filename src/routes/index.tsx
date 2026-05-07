@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
-import { Phone, Mail, Calendar, Hammer, Shield, Award, ArrowRight } from "lucide-react";
+import { Phone, Mail, Calendar, Hammer, Shield, Award, ArrowRight, Star, ExternalLink } from "lucide-react";
 import logoWhite from "@/assets/logo-white.png";
 import heroVideo from "@/assets/hero-video.mp4.asset.json";
 import kitchen from "@/assets/gallery-kitchen-1.jpg";
@@ -19,6 +19,8 @@ export const Route = createFileRoute("/")({
   }),
   component: Index,
 });
+
+const REVIEW_URL = "https://g.page/r/labbe-build-remodel/review";
 
 const SERVICES = [
   { title: "Kitchens", img: kitchen, desc: "Custom kitchens built to last." },
@@ -43,10 +45,13 @@ function Index() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 pt-16">
+          <div className="mb-6 inline-flex items-center gap-2 bg-brand-yellow text-brand-black px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest shadow-yellow">
+            <Star className="h-3.5 w-3.5 fill-brand-black" /> 30+ Years of Craftsmanship
+          </div>
           <img
             src={logoWhite}
             alt="Labbe Build + Remodel"
-            className="w-[min(540px,85vw)] h-auto drop-shadow-2xl mb-10 animate-[fadeIn_1s_ease-out]"
+            className="w-[min(540px,85vw)] h-auto drop-shadow-2xl mb-8 animate-[fadeIn_1s_ease-out]"
           />
           <p className="text-white/90 text-sm md:text-base uppercase tracking-[0.3em] mb-3">
             Licensed · Insured · Trusted
@@ -76,6 +81,14 @@ function Index() {
               <Calendar className="h-5 w-5" /> Book Consultation
             </Link>
           </div>
+          <a
+            href={REVIEW_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-5 inline-flex items-center gap-2 text-white/90 hover:text-brand-yellow text-sm font-semibold uppercase tracking-wide underline-offset-4 hover:underline"
+          >
+            <Star className="h-4 w-4 fill-brand-yellow text-brand-yellow" /> Leave us a 5-Star Review <ExternalLink className="h-3.5 w-3.5" />
+          </a>
         </div>
       </section>
 
@@ -84,7 +97,7 @@ function Index() {
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
           {[
             { icon: Shield, title: "Fully Insured", text: "100% licensed & insured for your peace of mind." },
-            { icon: Hammer, title: "Master Craftsmanship", text: "Decades of hands-on building expertise." },
+            { icon: Hammer, title: "30+ Years Experience", text: "Three decades of hands-on building expertise." },
             { icon: Award, title: "Locally Trusted", text: "Owner-operated by Kevin Labbe." },
           ].map((b) => (
             <div key={b.title} className="flex items-center gap-4 justify-center md:justify-start">
@@ -131,6 +144,31 @@ function Index() {
           <Link to="/contact" className="mt-8 inline-flex items-center gap-2 bg-brand-black text-primary-foreground px-8 py-4 rounded-md font-bold uppercase tracking-wide hover:bg-foreground transition">
             Book Your Consultation <ArrowRight className="h-5 w-5" />
           </Link>
+        </div>
+      </section>
+
+      {/* REVIEWS PREVIEW */}
+      <section className="bg-brand-black text-primary-foreground py-20">
+        <div className="max-w-5xl mx-auto px-6 text-center">
+          <div className="flex justify-center gap-1 mb-4">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <Star key={i} className="h-6 w-6 fill-accent text-accent" />
+            ))}
+          </div>
+          <p className="text-accent text-sm uppercase tracking-[0.3em] mb-2">5-Star Rated</p>
+          <h2 className="text-3xl md:text-5xl font-display uppercase">Trusted by homeowners for 30+ years.</h2>
+          <p className="mt-5 text-primary-foreground/70 max-w-2xl mx-auto italic">
+            "Kevin and his crew transformed our outdated kitchen into a dream space. Three decades of experience really shows — every detail was perfect."
+          </p>
+          <p className="mt-3 text-sm uppercase tracking-wider text-primary-foreground/60">— Sarah M., Kitchen Remodel</p>
+          <div className="mt-8 flex flex-wrap gap-3 justify-center">
+            <Link to="/reviews" className="inline-flex items-center gap-2 bg-white text-brand-black px-6 py-3 rounded-md font-bold uppercase tracking-wide hover:bg-brand-yellow transition">
+              Read All Reviews <ArrowRight className="h-4 w-4" />
+            </Link>
+            <a href={REVIEW_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-brand-yellow text-brand-black px-6 py-3 rounded-md font-bold uppercase tracking-wide hover:brightness-110 shadow-yellow transition">
+              <Star className="h-4 w-4 fill-brand-black" /> Leave a 5-Star Review
+            </a>
+          </div>
         </div>
       </section>
     </>
