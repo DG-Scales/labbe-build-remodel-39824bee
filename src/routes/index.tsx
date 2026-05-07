@@ -198,7 +198,7 @@ function Index() {
           </p>
           <p className="mt-3 text-sm uppercase tracking-wider text-primary-foreground/60">— Sarah M., Kitchen Remodel</p>
           <div className="mt-8 flex flex-wrap gap-3 justify-center">
-            <Link to="/reviews" className="inline-flex items-center gap-2 bg-white text-brand-black px-6 py-3 rounded-md font-bold uppercase tracking-wide hover:bg-brand-yellow transition">
+            <Link to="/reviews" className="inline-flex items-center gap-2 bg-white !text-brand-black px-6 py-3 rounded-md font-bold uppercase tracking-wide hover:bg-brand-yellow transition">
               Read All Reviews <ArrowRight className="h-4 w-4" />
             </Link>
             <a href={REVIEW_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-brand-yellow text-brand-black px-6 py-3 rounded-md font-bold uppercase tracking-wide hover:brightness-110 shadow-yellow transition">
