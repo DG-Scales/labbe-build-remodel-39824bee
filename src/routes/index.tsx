@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
-import { Phone, Mail, Calendar, Hammer, Shield, Award, ArrowRight, Star, ExternalLink } from "lucide-react";
+import { Phone, Mail, Calendar, Hammer, Shield, Award, ArrowRight, Star, ExternalLink, MapPin } from "lucide-react";
 import logo from "@/assets/logo.png";
 import heroVideo from "@/assets/hero-video.mp4.asset.json";
 import kitchen from "@/assets/gallery-kitchen-1.jpg";
@@ -144,6 +144,42 @@ function Index() {
           <Link to="/contact" className="mt-8 inline-flex items-center gap-2 bg-brand-black text-primary-foreground px-8 py-4 rounded-md font-bold uppercase tracking-wide hover:bg-foreground transition">
             Book Your Consultation <ArrowRight className="h-5 w-5" />
           </Link>
+        </div>
+      </section>
+
+      {/* SERVICE AREA */}
+      <section className="bg-secondary py-20">
+        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground mb-2">Where We Work</p>
+            <h2 className="text-4xl md:text-5xl font-display uppercase">Proudly serving the North Shore.</h2>
+            <p className="mt-5 text-foreground/80 leading-relaxed">
+              Labbe Build + Remodel is based on Massachusetts' North Shore and works with homeowners across the region — from coastal capes to inland new builds. If your project is in or near the towns below, we'd love to hear about it.
+            </p>
+            <ul className="mt-6 grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-2 text-sm font-semibold uppercase tracking-wide text-foreground/80">
+              {["Salem", "Beverly", "Marblehead", "Swampscott", "Danvers", "Peabody", "Lynn", "Lynnfield", "Wenham", "Hamilton", "Manchester", "Gloucester", "Rockport", "Ipswich", "Topsfield"].map((t) => (
+                <li key={t} className="flex items-center gap-2"><MapPin className="h-3.5 w-3.5 text-accent-foreground" /> {t}</li>
+              ))}
+            </ul>
+            <p className="mt-6 text-sm text-muted-foreground">Don't see your town? Give us a call — we cover the entire North Shore region.</p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a href="tel:+16179539498" className="inline-flex items-center gap-2 bg-brand-black text-primary-foreground px-6 py-3 rounded-md font-bold uppercase tracking-wide hover:bg-foreground transition">
+                <Phone className="h-4 w-4" /> (617) 953-9498
+              </a>
+              <Link to="/contact" className="inline-flex items-center gap-2 bg-brand-yellow text-brand-black px-6 py-3 rounded-md font-bold uppercase tracking-wide hover:brightness-110 shadow-yellow transition">
+                Request a Quote <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+          <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-bold border-4 border-brand-black">
+            <iframe
+              title="Labbe Build + Remodel — North Shore service area"
+              src="https://www.google.com/maps?q=North+Shore,+Massachusetts&output=embed"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="absolute inset-0 w-full h-full"
+            />
+          </div>
         </div>
       </section>
 
