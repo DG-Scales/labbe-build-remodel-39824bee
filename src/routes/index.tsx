@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { Phone, Mail, Calendar, Hammer, Shield, Award, ArrowRight, Star, ExternalLink } from "lucide-react";
-import logoWhite from "@/assets/logo-white.png";
+import logo from "@/assets/logo.png";
 import heroVideo from "@/assets/hero-video.mp4.asset.json";
 import kitchen from "@/assets/gallery-kitchen-1.jpg";
 import bath from "@/assets/gallery-bath-1.jpg";
@@ -49,9 +49,9 @@ function Index() {
             <Star className="h-3.5 w-3.5 fill-brand-black" /> 30+ Years of Craftsmanship
           </div>
           <img
-            src={logoWhite}
+            src={logo}
             alt="Labbe Build + Remodel"
-            className="w-[min(380px,70vw)] h-auto drop-shadow-2xl mb-8 animate-[fadeIn_1s_ease-out]"
+            className="w-[min(380px,70vw)] h-auto drop-shadow-2xl mb-8 animate-[fadeIn_1s_ease-out] [filter:brightness(0)_invert(1)_drop-shadow(0_4px_12px_rgba(0,0,0,0.6))]"
           />
           <p className="text-white/90 text-sm md:text-base uppercase tracking-[0.3em] mb-3">
             Licensed · Insured · Trusted

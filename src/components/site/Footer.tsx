@@ -1,13 +1,13 @@
 import { Link } from "@tanstack/react-router";
 import { Phone, Mail, MapPin } from "lucide-react";
-import logo from "@/assets/logo-white.png";
+import logo from "@/assets/logo.png";
 
 export function Footer() {
   return (
     <footer className="bg-brand-black text-primary-foreground mt-20">
       <div className="max-w-7xl mx-auto px-6 py-14 grid md:grid-cols-3 gap-10">
         <div>
-          <img src={logo} alt="Labbe Build + Remodel" className="h-20 w-auto mb-4" />
+          <img src={logo} alt="Labbe Build + Remodel" className="h-20 w-auto mb-4 [filter:brightness(0)_invert(1)]" />
           <p className="text-sm text-primary-foreground/70 max-w-xs">
             Licensed & insured remodeling and construction. Quality craftsmanship you can trust.
           </p>
