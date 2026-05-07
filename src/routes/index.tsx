@@ -136,6 +136,42 @@ function Index() {
         </div>
       </section>
 
+      {/* PROCESS */}
+      <section className="bg-secondary py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground mb-2">How We Work</p>
+            <h2 className="text-4xl md:text-5xl font-display uppercase">Our Process</h2>
+            <p className="mt-4 text-foreground/70 max-w-2xl mx-auto">
+              From the first phone call to the final walk-through — a clear, honest path from idea to finished project.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { icon: MessageSquare, step: "01", title: "Consult", desc: "Free in-home consultation to understand your goals, timeline, and budget." },
+              { icon: PencilRuler, step: "02", title: "Plan & Quote", desc: "A detailed, line-by-line quote with materials, scope, and a clear schedule." },
+              { icon: Hammer, step: "03", title: "Build", desc: "Our crew handles every phase with daily site cleanup and weekly updates." },
+              { icon: KeyRound, step: "04", title: "Walk-Through", desc: "Final inspection together — we don't leave until you're 100% happy." },
+            ].map((s) => (
+              <div key={s.title} className="group bg-card rounded-lg p-6 shadow-bold border-2 border-transparent hover:border-brand-yellow transition">
+                <div className="flex items-center justify-between mb-5">
+                  <div className="bg-brand-black text-brand-yellow p-3 rounded-md group-hover:bg-brand-yellow group-hover:text-brand-black transition">
+                    <s.icon className="h-6 w-6" />
+                  </div>
+                  <span className="font-display text-3xl text-foreground/15 group-hover:text-brand-yellow transition">{s.step}</span>
+                </div>
+                <div className="font-display text-xl uppercase mb-2">{s.title}</div>
+                <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-12 flex flex-wrap items-center justify-center gap-3 text-sm text-foreground/70">
+            <ClipboardCheck className="h-5 w-5 text-accent-foreground" />
+            <span className="uppercase tracking-wider font-semibold">Licensed, Insured & Permitted on every job.</span>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="bg-gradient-yellow py-16">
         <div className="max-w-4xl mx-auto px-6 text-center">
