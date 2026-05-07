@@ -48,11 +48,13 @@ function Index() {
           <div className="mb-6 inline-flex items-center gap-2 bg-brand-yellow text-brand-black px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest shadow-yellow">
             <Star className="h-3.5 w-3.5 fill-brand-black" /> 30+ Years of Craftsmanship
           </div>
-          <img
-            src={logo}
-            alt="Labbe Build + Remodel"
-            className="w-[min(380px,70vw)] h-auto drop-shadow-2xl mb-8 animate-[fadeIn_1s_ease-out] [filter:brightness(0)_invert(1)_drop-shadow(0_4px_12px_rgba(0,0,0,0.6))]"
-          />
+          <div className="mb-8 bg-white/95 rounded-lg px-6 py-4 shadow-2xl animate-[fadeIn_1s_ease-out]">
+            <img
+              src={logo}
+              alt="Labbe Build + Remodel"
+              className="w-[min(360px,70vw)] h-auto"
+            />
+          </div>
           <p className="text-white/90 text-sm md:text-base uppercase tracking-[0.3em] mb-3">
             Licensed · Insured · Trusted
           </p>
@@ -198,8 +200,8 @@ function Index() {
           </p>
           <p className="mt-3 text-sm uppercase tracking-wider text-primary-foreground/60">— Sarah M., Kitchen Remodel</p>
           <div className="mt-8 flex flex-wrap gap-3 justify-center">
-            <Link to="/reviews" className="inline-flex items-center gap-2 bg-white !text-brand-black px-6 py-3 rounded-md font-bold uppercase tracking-wide hover:bg-brand-yellow transition">
-              Read All Reviews <ArrowRight className="h-4 w-4" />
+            <Link to="/reviews" className="inline-flex items-center gap-2 bg-white text-brand-black [&]:text-brand-black px-6 py-3 rounded-md font-bold uppercase tracking-wide hover:bg-brand-yellow transition">
+              <span className="text-brand-black">Read All Reviews</span> <ArrowRight className="h-4 w-4 text-brand-black" />
             </Link>
             <a href={REVIEW_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-brand-yellow text-brand-black px-6 py-3 rounded-md font-bold uppercase tracking-wide hover:brightness-110 shadow-yellow transition">
               <Star className="h-4 w-4 fill-brand-black" /> Leave a 5-Star Review
