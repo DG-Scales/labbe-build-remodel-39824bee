@@ -12,6 +12,12 @@ import a1 from "@/assets/gallery-addition-1.jpg";
 import a2 from "@/assets/gallery-addition-2.jpg";
 import d1 from "@/assets/gallery-deck-1.jpg";
 import bs1 from "@/assets/gallery-basement-1.jpg";
+import bathTileReal from "@/assets/gallery-bath-tile-real.jpg";
+import deckRailingReal from "@/assets/gallery-deck-railing-real.jpg";
+import deckFullReal from "@/assets/gallery-deck-full-real.jpg";
+import trimBuiltinsReal from "@/assets/gallery-trim-builtins-real.jpg";
+import kitchenWaterfrontReal from "@/assets/gallery-kitchen-waterfront-real.jpg";
+import deckWaterfrontReal from "@/assets/gallery-deck-waterfront-real.jpg";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -38,15 +44,21 @@ const categoryBlurbs: Record<Exclude<Cat, "All">, string> = {
 const items: { src: string; cat: Exclude<Cat, "All">; title: string; caption: string }[] = [
   { src: k1, cat: "Kitchens", title: "Marble Island Kitchen", caption: "Open-concept remodel with a waterfall marble island and custom inset cabinetry." },
   { src: k2, cat: "Kitchens", title: "White Shaker Kitchen", caption: "Bright shaker kitchen with quartz counters, brass pendants, and a subway tile backsplash." },
+  { src: kitchenWaterfrontReal, cat: "Kitchens", title: "Waterfront Kitchen", caption: "Open coastal kitchen with a marbled quartz island, brass fixtures, and panoramic water views." },
   { src: b1, cat: "Baths", title: "Spa Master Bath", caption: "Curbless tile shower, freestanding tub, and heated floors for a true spa feel." },
   { src: b2, cat: "Baths", title: "Modern Walnut Bath", caption: "Floating walnut vanity paired with large-format porcelain tile and matte black fixtures." },
+  { src: bathTileReal, cat: "Baths", title: "Large-Format Tile Bath", caption: "Polished large-format porcelain floor and curb-set shower base — laid level and watertight before finish." },
   { src: s1, cat: "Siding", title: "Cape Shingle Siding", caption: "Full re-side in white cedar shingles with new trim, shutters, and weather-tight flashing." },
   { src: s2, cat: "Siding", title: "Board & Batten Exterior", caption: "Modern farmhouse facade with vertical board & batten siding and crisp white trim details." },
   { src: t1, cat: "Trim", title: "Wainscoting & Crown", caption: "Custom wainscoting, baseboards, and crown molding throughout a formal living room." },
   { src: t2, cat: "Trim", title: "Built-in Fireplace Surround", caption: "Painted built-in bookcases flanking a custom mantel — cut, fit, and finished on site." },
+  { src: trimBuiltinsReal, cat: "Trim", title: "Custom Built-In Bar", caption: "Painted built-in bar with floating shelves, glass uppers, and integrated wine fridge — finish carpentry from end to end." },
   { src: a1, cat: "Additions", title: "Sunroom Addition", caption: "Year-round sunroom addition with insulated glass and a vaulted tongue-and-groove ceiling." },
   { src: a2, cat: "Additions", title: "Two-Story Addition", caption: "Two-story addition adding a primary suite above and an expanded family room below." },
   { src: d1, cat: "Decks", title: "Composite Deck & Pergola", caption: "Low-maintenance composite deck with a cedar pergola and integrated bench seating." },
+  { src: deckFullReal, cat: "Decks", title: "Pressure-Treated Deck", caption: "New pressure-treated deck with custom railings, lattice skirt, and matching stair stringers." },
+  { src: deckRailingReal, cat: "Decks", title: "Custom Railing Detail", caption: "Hand-built balusters and chamfered post caps — railing details that hold up over time." },
+  { src: deckWaterfrontReal, cat: "Decks", title: "Waterfront Composite Deck", caption: "Composite decking installed over a steel-frame oceanfront landing — built to handle salt air and weather." },
   { src: bs1, cat: "Basements", title: "Finished Basement", caption: "Full basement build-out with media area, wet bar, and code-compliant egress." },
 ];
 const cats: Cat[] = ["All", "Kitchens", "Baths", "Siding", "Trim", "Additions", "Decks", "Basements"];
