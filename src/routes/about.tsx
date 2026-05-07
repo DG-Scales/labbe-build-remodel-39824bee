@@ -21,7 +21,7 @@ function AboutPage() {
         <div className="max-w-7xl mx-auto px-6 text-center">
           <p className="text-accent text-sm uppercase tracking-[0.3em] mb-3">Meet the Owner</p>
           <h1 className="text-5xl md:text-6xl font-display uppercase">Kevin Labbe</h1>
-          <p className="mt-3 text-primary-foreground/70">30+ years building & remodeling homes across New England.</p>
+          <p className="mt-3 text-primary-foreground/70">30+ years building & remodeling homes across the North Shore.</p>
         </div>
       </section>
 
@@ -39,7 +39,7 @@ function AboutPage() {
               hammer swing to today's complex remodels and additions, that mindset hasn't changed.
             </p>
             <p>
-              A New England native, Kevin brings hands-on experience to every job site — framing,
+              A North Shore local, Kevin brings hands-on experience to every job site — framing,
               finish carpentry, custom kitchens and baths, additions, siding and everything in between.
               When you hire Labbe Build + Remodel, you're hiring Kevin and his trusted crew, not a
               subcontracted middleman.

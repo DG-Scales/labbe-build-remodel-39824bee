@@ -37,7 +37,7 @@ function ReviewsPage() {
             ))}
           </div>
           <p className="mt-4 text-primary-foreground/70 max-w-xl mx-auto">
-            Three decades of happy homeowners across Maine & New England.
+            Three decades of happy homeowners across the North Shore.
           </p>
         </div>
       </section>

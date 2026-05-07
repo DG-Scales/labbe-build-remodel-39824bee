@@ -32,7 +32,7 @@ export function Header() {
             </Link>
           ))}
           <a
-            href="tel:+12075550100"
+            href="tel:+16179539498"
             className="inline-flex items-center gap-2 bg-brand-black text-primary-foreground px-4 py-2 rounded-md text-sm font-bold uppercase hover:bg-foreground transition-colors"
           >
             <Phone className="h-4 w-4" /> Call Now
@@ -50,7 +50,7 @@ export function Header() {
                 {n.label}
               </Link>
             ))}
-            <a href="tel:+12075550100" className="inline-flex items-center gap-2 bg-brand-black text-primary-foreground px-4 py-2 rounded-md text-sm font-bold uppercase w-fit">
+            <a href="tel:+16179539498" className="inline-flex items-center gap-2 bg-brand-black text-primary-foreground px-4 py-2 rounded-md text-sm font-bold uppercase w-fit">
               <Phone className="h-4 w-4" /> Call Now
             </a>
           </div>

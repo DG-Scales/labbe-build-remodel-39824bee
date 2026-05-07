@@ -63,7 +63,7 @@ function Index() {
 
           <div className="mt-10 flex flex-wrap gap-3 justify-center">
             <a
-              href="tel:+12075550100"
+              href="tel:+16179539498"
               className="inline-flex items-center gap-2 bg-brand-yellow text-brand-black px-6 py-3.5 rounded-md font-bold uppercase tracking-wide hover:brightness-110 shadow-yellow transition"
             >
               <Phone className="h-5 w-5" /> Call Now
