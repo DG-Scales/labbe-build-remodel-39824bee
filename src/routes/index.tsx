@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { Phone, Mail, Calendar, Hammer, Shield, Award, ArrowRight, Star, ExternalLink, MapPin } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logoWhite from "@/assets/logo-white.png";
 import heroVideo from "@/assets/hero-video.mp4.asset.json";
 import kitchen from "@/assets/gallery-kitchen-1.jpg";
 import bath from "@/assets/gallery-bath-1.jpg";
@@ -48,13 +48,11 @@ function Index() {
           <div className="mb-6 inline-flex items-center gap-2 bg-brand-yellow text-brand-black px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest shadow-yellow">
             <Star className="h-3.5 w-3.5 fill-brand-black" /> 30+ Years of Craftsmanship
           </div>
-          <div className="mb-8 bg-white/95 rounded-lg px-6 py-4 shadow-2xl animate-[fadeIn_1s_ease-out]">
-            <img
-              src={logo}
-              alt="Labbe Build + Remodel"
-              className="w-[min(360px,70vw)] h-auto"
-            />
-          </div>
+          <img
+            src={logoWhite}
+            alt="Labbe Build + Remodel"
+            className="w-[min(380px,70vw)] h-auto mb-8 animate-[fadeIn_1s_ease-out] drop-shadow-[0_8px_24px_rgba(0,0,0,0.7)]"
+          />
           <p className="text-white/90 text-sm md:text-base uppercase tracking-[0.3em] mb-3">
             Licensed · Insured · Trusted
           </p>
