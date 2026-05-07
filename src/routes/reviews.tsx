@@ -27,7 +27,7 @@ const REVIEWS = [
 function ReviewsPage() {
   return (
     <>
-      <section className="bg-brand-black text-primary-foreground py-20">
+      <section className="bg-brand-black text-primary-foreground py-20 pt-32">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <p className="text-accent text-sm uppercase tracking-[0.3em] mb-3">30+ Years · Trusted</p>
           <h1 className="text-5xl md:text-6xl font-display uppercase">5-Star Reviews</h1>
