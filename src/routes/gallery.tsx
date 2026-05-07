@@ -26,19 +26,28 @@ export const Route = createFileRoute("/gallery")({
 });
 
 type Cat = "All" | "Kitchens" | "Baths" | "Siding" | "Trim" | "Additions" | "Decks" | "Basements";
-const items: { src: string; cat: Exclude<Cat, "All">; title: string }[] = [
-  { src: k1, cat: "Kitchens", title: "Marble Island Kitchen" },
-  { src: k2, cat: "Kitchens", title: "Navy Farmhouse Kitchen" },
-  { src: b1, cat: "Baths", title: "Spa Master Bath" },
-  { src: b2, cat: "Baths", title: "Modern Walnut Bath" },
-  { src: s1, cat: "Siding", title: "Cape Shingle Siding" },
-  { src: s2, cat: "Siding", title: "Board & Batten Exterior" },
-  { src: t1, cat: "Trim", title: "Coffered Ceiling Living Room" },
-  { src: t2, cat: "Trim", title: "Custom Built-in Bookcase" },
-  { src: a1, cat: "Additions", title: "Sunroom Addition" },
-  { src: a2, cat: "Additions", title: "Two-Story Addition" },
-  { src: d1, cat: "Decks", title: "Deck & Pergola" },
-  { src: bs1, cat: "Basements", title: "Finished Basement" },
+const categoryBlurbs: Record<Exclude<Cat, "All">, string> = {
+  Kitchens: "Full kitchen remodels — custom cabinetry, stone counters, and layouts that actually work for the way you cook and entertain.",
+  Baths: "Master suites and family baths built for everyday comfort: tiled showers, custom vanities, and clean, lasting waterproofing.",
+  Siding: "Cedar shingle, clapboard, and board & batten replacements built to handle North Shore weather year after year.",
+  Trim: "Finish carpentry that elevates a room — crown, wainscoting, coffered ceilings, and built-ins fit on site.",
+  Additions: "Sunrooms, dormers, and full second-story additions, blended seamlessly into the original home.",
+  Decks: "Composite and cedar decks, pergolas, and outdoor living spaces designed for New England summers.",
+  Basements: "Finished basements with proper framing, insulation, and egress — added living space done right.",
+};
+const items: { src: string; cat: Exclude<Cat, "All">; title: string; caption: string }[] = [
+  { src: k1, cat: "Kitchens", title: "Marble Island Kitchen", caption: "Open-concept remodel with a waterfall marble island and custom inset cabinetry." },
+  { src: k2, cat: "Kitchens", title: "White Shaker Kitchen", caption: "Bright shaker kitchen with quartz counters, brass pendants, and a subway tile backsplash." },
+  { src: b1, cat: "Baths", title: "Spa Master Bath", caption: "Curbless tile shower, freestanding tub, and heated floors for a true spa feel." },
+  { src: b2, cat: "Baths", title: "Modern Walnut Bath", caption: "Floating walnut vanity paired with large-format porcelain tile and matte black fixtures." },
+  { src: s1, cat: "Siding", title: "Cape Shingle Siding", caption: "Full re-side in white cedar shingles with new trim, shutters, and weather-tight flashing." },
+  { src: s2, cat: "Siding", title: "Board & Batten Exterior", caption: "Modern farmhouse facade with vertical board & batten siding and crisp white trim details." },
+  { src: t1, cat: "Trim", title: "Wainscoting & Crown", caption: "Custom wainscoting, baseboards, and crown molding throughout a formal living room." },
+  { src: t2, cat: "Trim", title: "Built-in Fireplace Surround", caption: "Painted built-in bookcases flanking a custom mantel — cut, fit, and finished on site." },
+  { src: a1, cat: "Additions", title: "Sunroom Addition", caption: "Year-round sunroom addition with insulated glass and a vaulted tongue-and-groove ceiling." },
+  { src: a2, cat: "Additions", title: "Two-Story Addition", caption: "Two-story addition adding a primary suite above and an expanded family room below." },
+  { src: d1, cat: "Decks", title: "Composite Deck & Pergola", caption: "Low-maintenance composite deck with a cedar pergola and integrated bench seating." },
+  { src: bs1, cat: "Basements", title: "Finished Basement", caption: "Full basement build-out with media area, wet bar, and code-compliant egress." },
 ];
 const cats: Cat[] = ["All", "Kitchens", "Baths", "Siding", "Trim", "Additions", "Decks", "Basements"];
 
@@ -72,15 +81,22 @@ function GalleryPage() {
           ))}
         </div>
 
+        {filter !== "All" && (
+          <p className="max-w-2xl mx-auto text-center text-muted-foreground mb-10">
+            {categoryBlurbs[filter]}
+          </p>
+        )}
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {filtered.map((i) => (
-            <figure key={i.title} className="group relative overflow-hidden rounded-lg shadow-bold aspect-[4/3]">
-              <img src={i.src} alt={i.title} loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-              <figcaption className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-5 text-white">
-                <div>
-                  <div className="text-xs uppercase tracking-widest text-accent">{i.cat}</div>
-                  <div className="font-display text-xl uppercase">{i.title}</div>
-                </div>
+            <figure key={i.title} className="group overflow-hidden rounded-lg shadow-bold bg-card flex flex-col">
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <img src={i.src} alt={i.title} loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              </div>
+              <figcaption className="p-5">
+                <div className="text-xs uppercase tracking-widest text-accent-foreground/70">{i.cat}</div>
+                <div className="font-display text-xl uppercase mt-1">{i.title}</div>
+                <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{i.caption}</p>
               </figcaption>
             </figure>
           ))}
