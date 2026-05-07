@@ -33,7 +33,7 @@ function Index() {
   return (
     <>
       {/* HERO */}
-      <section className="relative -mt-16 h-screen min-h-[640px] w-full overflow-hidden">
+      <section className="relative -mt-20 h-screen min-h-[640px] w-full overflow-hidden">
         <video
           src={heroVideo.url}
           autoPlay
@@ -44,14 +44,14 @@ function Index() {
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
-        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 pt-16">
+        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 pt-20">
           <div className="mb-6 inline-flex items-center gap-2 bg-brand-yellow text-brand-black px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest shadow-yellow">
             <Star className="h-3.5 w-3.5 fill-brand-black" /> 30+ Years of Craftsmanship
           </div>
           <img
             src={logoWhite}
             alt="Labbe Build + Remodel"
-            className="w-[min(540px,85vw)] h-auto drop-shadow-2xl mb-8 animate-[fadeIn_1s_ease-out]"
+            className="w-[min(380px,70vw)] h-auto drop-shadow-2xl mb-8 animate-[fadeIn_1s_ease-out]"
           />
           <p className="text-white/90 text-sm md:text-base uppercase tracking-[0.3em] mb-3">
             Licensed · Insured · Trusted
@@ -63,7 +63,7 @@ function Index() {
 
           <div className="mt-10 flex flex-wrap gap-3 justify-center">
             <a
-              href="tel:+12075550100"
+              href="tel:+16179539498"
               className="inline-flex items-center gap-2 bg-brand-yellow text-brand-black px-6 py-3.5 rounded-md font-bold uppercase tracking-wide hover:brightness-110 shadow-yellow transition"
             >
               <Phone className="h-5 w-5" /> Call Now
