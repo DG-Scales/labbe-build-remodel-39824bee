@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
-import { Phone, Mail, Calendar, Hammer, Shield, Award, ArrowRight, Star, ExternalLink, MapPin } from "lucide-react";
+import { Phone, Mail, Calendar, Hammer, Shield, Award, ArrowRight, Star, ExternalLink, MapPin, MessageSquare, PencilRuler, ClipboardCheck, KeyRound } from "lucide-react";
 import logoWhite from "@/assets/logo-white.png";
 import heroVideo from "@/assets/hero-video.mp4.asset.json";
 import kitchen from "@/assets/gallery-kitchen-1.jpg";
