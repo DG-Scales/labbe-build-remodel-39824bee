@@ -148,5 +148,19 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-body);
   }
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: 0.01em;
+  }
+}
+
+@layer utilities {
+  .text-brand-yellow { color: var(--brand-yellow); }
+  .bg-brand-yellow { background-color: var(--brand-yellow); }
+  .bg-brand-black { background-color: var(--brand-black); }
+  .bg-gradient-yellow { background-image: var(--gradient-yellow); }
+  .shadow-bold { box-shadow: var(--shadow-bold); }
+  .shadow-yellow { box-shadow: var(--shadow-yellow); }
 }
