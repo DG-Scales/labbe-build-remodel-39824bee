@@ -146,6 +146,31 @@ function Index() {
           </Link>
         </div>
       </section>
+
+      {/* REVIEWS PREVIEW */}
+      <section className="bg-brand-black text-primary-foreground py-20">
+        <div className="max-w-5xl mx-auto px-6 text-center">
+          <div className="flex justify-center gap-1 mb-4">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <Star key={i} className="h-6 w-6 fill-accent text-accent" />
+            ))}
+          </div>
+          <p className="text-accent text-sm uppercase tracking-[0.3em] mb-2">5-Star Rated</p>
+          <h2 className="text-3xl md:text-5xl font-display uppercase">Trusted by homeowners for 30+ years.</h2>
+          <p className="mt-5 text-primary-foreground/70 max-w-2xl mx-auto italic">
+            "Kevin and his crew transformed our outdated kitchen into a dream space. Three decades of experience really shows — every detail was perfect."
+          </p>
+          <p className="mt-3 text-sm uppercase tracking-wider text-primary-foreground/60">— Sarah M., Kitchen Remodel</p>
+          <div className="mt-8 flex flex-wrap gap-3 justify-center">
+            <Link to="/reviews" className="inline-flex items-center gap-2 bg-white text-brand-black px-6 py-3 rounded-md font-bold uppercase tracking-wide hover:bg-brand-yellow transition">
+              Read All Reviews <ArrowRight className="h-4 w-4" />
+            </Link>
+            <a href={REVIEW_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-brand-yellow text-brand-black px-6 py-3 rounded-md font-bold uppercase tracking-wide hover:brightness-110 shadow-yellow transition">
+              <Star className="h-4 w-4 fill-brand-black" /> Leave a 5-Star Review
+            </a>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
