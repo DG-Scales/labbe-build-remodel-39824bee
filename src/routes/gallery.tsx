@@ -1,5 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useEffect } from "react";
 import k1 from "@/assets/gallery-kitchen-1.jpg";
 import k2 from "@/assets/gallery-kitchen-2.jpg";
 import b1 from "@/assets/gallery-bath-1.jpg";
@@ -66,6 +69,25 @@ const cats: Cat[] = ["All", "Kitchens", "Baths", "Siding", "Trim", "Additions", 
 function GalleryPage() {
   const [filter, setFilter] = useState<Cat>("All");
   const filtered = filter === "All" ? items : items.filter((i) => i.cat === filter);
+  const [lightboxIdx, setLightboxIdx] = useState<number | null>(null);
+  const open = lightboxIdx !== null;
+  const current = open ? filtered[lightboxIdx!] : null;
+
+  const close = () => setLightboxIdx(null);
+  const prev = () => setLightboxIdx((i) => (i === null ? null : (i - 1 + filtered.length) % filtered.length));
+  const next = () => setLightboxIdx((i) => (i === null ? null : (i + 1) % filtered.length));
+
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "ArrowLeft") prev();
+      else if (e.key === "ArrowRight") next();
+      else if (e.key === "Escape") close();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open, filtered.length]);
+
   return (
     <>
       <section className="bg-brand-black text-primary-foreground py-20 pt-32">
@@ -100,11 +122,16 @@ function GalleryPage() {
         )}
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {filtered.map((i) => (
+          {filtered.map((i, idx) => (
             <figure key={i.title} className="group overflow-hidden rounded-lg shadow-bold bg-card flex flex-col">
-              <div className="relative aspect-[4/3] overflow-hidden">
+              <button
+                type="button"
+                onClick={() => setLightboxIdx(idx)}
+                className="relative aspect-[4/3] overflow-hidden block w-full focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                aria-label={`Open ${i.title}`}
+              >
                 <img src={i.src} alt={i.title} loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-              </div>
+              </button>
               <figcaption className="p-5">
                 <div className="text-xs uppercase tracking-widest text-accent-foreground/70">{i.cat}</div>
                 <div className="font-display text-xl uppercase mt-1">{i.title}</div>
@@ -114,6 +141,50 @@ function GalleryPage() {
           ))}
         </div>
       </section>
+
+      <Dialog open={open} onOpenChange={(o) => !o && close()}>
+        <DialogContent className="max-w-[95vw] w-[95vw] h-[92vh] p-0 bg-brand-black border-brand-black sm:rounded-none flex flex-col">
+          {current && (
+            <>
+              <div className="relative flex-1 min-h-0 flex items-center justify-center">
+                <img
+                  src={current.src}
+                  alt={current.title}
+                  className="max-h-full max-w-full object-contain"
+                />
+                <button
+                  type="button"
+                  onClick={prev}
+                  aria-label="Previous image"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition"
+                >
+                  <ChevronLeft className="h-7 w-7" />
+                </button>
+                <button
+                  type="button"
+                  onClick={next}
+                  aria-label="Next image"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition"
+                >
+                  <ChevronRight className="h-7 w-7" />
+                </button>
+              </div>
+              <div className="px-6 py-5 text-primary-foreground border-t border-white/10">
+                <div className="flex items-center justify-between gap-4">
+                  <div>
+                    <div className="text-xs uppercase tracking-widest text-accent">{current.cat}</div>
+                    <div className="font-display text-xl uppercase mt-1">{current.title}</div>
+                    <p className="text-sm text-primary-foreground/70 mt-2 leading-relaxed max-w-3xl">{current.caption}</p>
+                  </div>
+                  <div className="text-xs uppercase tracking-widest text-primary-foreground/60 shrink-0">
+                    {(lightboxIdx ?? 0) + 1} / {filtered.length}
+                  </div>
+                </div>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </>
   );
 }
