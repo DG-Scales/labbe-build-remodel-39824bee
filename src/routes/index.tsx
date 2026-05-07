@@ -69,7 +69,7 @@ function Index() {
               <Phone className="h-5 w-5" /> Call Now
             </a>
             <a
-              href="mailto:kevin@labbebuild.com"
+              href="mailto:kevinlabbe@comcast.net"
               className="inline-flex items-center gap-2 bg-white/10 backdrop-blur border border-white/30 text-white px-6 py-3.5 rounded-md font-bold uppercase tracking-wide hover:bg-white/20 transition"
             >
               <Mail className="h-5 w-5" /> Email Us
