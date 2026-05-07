@@ -46,7 +46,7 @@ function ContactPage() {
     const body = encodeURIComponent(
       `Name: ${d.firstName} ${d.lastName}\nEmail: ${d.email}\nPhone: ${d.phone}\nCity: ${d.city || "-"}\nProject: ${d.projectType || "-"}\n\n${d.message || ""}`
     );
-    window.location.href = `mailto:kevin@labbebuild.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:kevinlabbe@comcast.net?subject=${subject}&body=${body}`;
     setSent(true);
   }
 
@@ -71,10 +71,10 @@ function ContactPage() {
             <div className="font-display text-2xl uppercase">Call Now</div>
             <div className="text-sm">(617) 953-9498</div>
           </a>
-          <a href="mailto:kevin@labbebuild.com" className="block bg-brand-black text-primary-foreground p-6 rounded-lg shadow-bold hover:bg-foreground transition">
+          <a href="mailto:kevinlabbe@comcast.net" className="block bg-brand-black text-primary-foreground p-6 rounded-lg shadow-bold hover:bg-foreground transition">
             <Mail className="h-6 w-6 mb-2 text-accent" />
             <div className="font-display text-2xl uppercase">Email</div>
-            <div className="text-sm text-primary-foreground/70">kevin@labbebuild.com</div>
+            <div className="text-sm text-primary-foreground/70">kevinlabbe@comcast.net</div>
           </a>
           <div className="bg-secondary p-6 rounded-lg">
             <MapPin className="h-6 w-6 mb-2" />

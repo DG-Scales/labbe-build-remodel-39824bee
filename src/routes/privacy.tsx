@@ -25,7 +25,7 @@ function PrivacyPage() {
         <div>
           <h2 className="font-display text-2xl uppercase mb-3">Who We Are</h2>
           <p className="text-muted-foreground leading-relaxed">
-            Labbe Build + Remodel is a residential construction and remodeling company owned by Kevin Labbe, serving the North Shore. You can reach us at (617) 953-9498 or kevin@labbebuild.com.
+            Labbe Build + Remodel is a residential construction and remodeling company owned by Kevin Labbe, serving the North Shore. You can reach us at (617) 953-9498 or kevinlabbe@comcast.net.
           </p>
         </div>
 
@@ -62,14 +62,14 @@ function PrivacyPage() {
         <div>
           <h2 className="font-display text-2xl uppercase mb-3">Your Choices</h2>
           <p className="text-muted-foreground leading-relaxed">
-            You can request that we delete the contact information you've submitted at any time by emailing kevin@labbebuild.com. We'll confirm the request and remove your information from our active records.
+            You can request that we delete the contact information you've submitted at any time by emailing kevinlabbe@comcast.net. We'll confirm the request and remove your information from our active records.
           </p>
         </div>
 
         <div>
           <h2 className="font-display text-2xl uppercase mb-3">Contact</h2>
           <p className="text-muted-foreground leading-relaxed">
-            Questions about this policy? Call <a className="text-accent-foreground underline" href="tel:+16179539498">(617) 953-9498</a> or email <a className="text-accent-foreground underline" href="mailto:kevin@labbebuild.com">kevin@labbebuild.com</a>.
+            Questions about this policy? Call <a className="text-accent-foreground underline" href="tel:+16179539498">(617) 953-9498</a> or email <a className="text-accent-foreground underline" href="mailto:kevinlabbe@comcast.net">kevinlabbe@comcast.net</a>.
           </p>
         </div>
       </section>

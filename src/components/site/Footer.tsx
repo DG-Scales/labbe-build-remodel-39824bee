@@ -16,7 +16,7 @@ export function Footer() {
           <h4 className="text-accent text-sm uppercase tracking-widest mb-4">Get in Touch</h4>
           <ul className="space-y-3 text-sm">
             <li className="flex items-center gap-3"><Phone className="h-4 w-4 text-accent" /><a href="tel:+16179539498" className="hover:text-accent">(617) 953-9498</a></li>
-            <li className="flex items-center gap-3"><Mail className="h-4 w-4 text-accent" /><a href="mailto:kevin@labbebuild.com" className="hover:text-accent">kevin@labbebuild.com</a></li>
+            <li className="flex items-center gap-3"><Mail className="h-4 w-4 text-accent" /><a href="mailto:kevinlabbe@comcast.net" className="hover:text-accent">kevinlabbe@comcast.net</a></li>
             <li className="flex items-center gap-3"><MapPin className="h-4 w-4 text-accent" /><span>Serving the North Shore</span></li>
           </ul>
         </div>
