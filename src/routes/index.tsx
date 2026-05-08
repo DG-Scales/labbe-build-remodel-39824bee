@@ -48,7 +48,7 @@ function Index() {
   useEffect(() => {
     const id = setInterval(() => {
       setHeroIdx((i) => (i + 1) % HERO_IMAGES.length);
-    }, 5000);
+    }, 6000);
     return () => clearInterval(id);
   }, []);
 
@@ -62,7 +62,7 @@ function Index() {
             src={img}
             alt=""
             aria-hidden="true"
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1500ms] ease-in-out ${
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[2000ms] ease-in-out will-change-[opacity] ${
               i === heroIdx ? "opacity-100" : "opacity-0"
             }`}
             style={{ transform: "scale(1.05)" }}
