@@ -2,11 +2,16 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { Phone, Mail, Calendar, Hammer, Shield, Award, ArrowRight, Star, ExternalLink, MapPin, MessageSquare, PencilRuler, ClipboardCheck, KeyRound } from "lucide-react";
 import logoWhite from "@/assets/logo-white.png";
-import heroVideo from "@/assets/hero-video.mp4.asset.json";
 import kitchen from "@/assets/gallery-kitchen-1.jpg";
 import bath from "@/assets/gallery-bath-1.jpg";
 import addition from "@/assets/gallery-addition-1.jpg";
 import siding from "@/assets/gallery-siding-2.jpg";
+import heroSiding from "@/assets/gallery-siding-1.jpg";
+import heroAddition2 from "@/assets/gallery-addition-2.jpg";
+import heroKitchen2 from "@/assets/gallery-kitchen-waterfront-real.jpg";
+import heroBath2 from "@/assets/gallery-bath-2.jpg";
+import heroTrim from "@/assets/gallery-trim-2.jpg";
+import { useEffect, useState } from "react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -29,20 +34,40 @@ const SERVICES = [
   { title: "Siding & Trim", img: siding, desc: "Beautiful exteriors and millwork." },
 ];
 
+const HERO_IMAGES = [
+  heroSiding,
+  heroKitchen2,
+  heroBath2,
+  heroAddition2,
+  heroTrim,
+  siding,
+];
+
 function Index() {
+  const [heroIdx, setHeroIdx] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => {
+      setHeroIdx((i) => (i + 1) % HERO_IMAGES.length);
+    }, 5000);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <>
       {/* HERO */}
       <section className="relative -mt-20 h-screen min-h-[640px] w-full overflow-hidden">
-        <video
-          src={heroVideo.url}
-          autoPlay
-          loop
-          muted
-          playsInline
-          poster={addition}
-          className="absolute inset-0 w-full h-full object-cover"
-        />
+        {HERO_IMAGES.map((img, i) => (
+          <img
+            key={img}
+            src={img}
+            alt=""
+            aria-hidden="true"
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1500ms] ease-in-out ${
+              i === heroIdx ? "opacity-100" : "opacity-0"
+            }`}
+            style={{ transform: "scale(1.05)" }}
+          />
+        ))}
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 pt-20">
           <div className="mb-6 inline-flex items-center gap-2 bg-brand-yellow text-brand-black px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest shadow-yellow">
