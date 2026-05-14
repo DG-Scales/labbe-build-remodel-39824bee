@@ -13,7 +13,7 @@ export const Route = createFileRoute("/reviews")({
   component: ReviewsPage,
 });
 
-const REVIEW_URL = "https://g.page/r/labbe-build-remodel/review";
+const REVIEW_URL = "https://g.page/r/CUMVlPiPbRMiEAE/review";
 
 const REVIEWS = [
   { name: "Sarah M.", project: "Kitchen Remodel", text: "Kevin and his crew transformed our outdated kitchen into a dream space. The craftsmanship is unreal — every detail was perfect. Communication was top notch the entire project." },
