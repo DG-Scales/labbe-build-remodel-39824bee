@@ -25,7 +25,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const REVIEW_URL = "https://g.page/r/labbe-build-remodel/review";
+const REVIEW_URL = "https://search.google.com/local/writereview?placeid=ChIJZWXnge4V44kRQxWU-I9tEyI";
 
 const SERVICES = [
   { title: "Kitchens", img: kitchen, desc: "Custom kitchens built to last." },
